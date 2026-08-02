@@ -18,7 +18,7 @@ This project trains a linear regression model to predict house sale prices from 
 | **RMSE**                         | **$170,900.96**      |
 | **Cross-Validated R² (5-fold)** | **0.8000 ± 0.0190** |
 
-The biggest accuracy gain came from **one-hot encoding `zipcode`** (treating location as categories rather than simple numbers), which lifted R² from 0.70 intially to 0.81.
+The biggest accuracy gain came from **one-hot encoding `zipcode`** (treating location as categories rather than simple numbers), which lifted R² from 0.70 initially to 0.81.
 
 ### Actual vs Predicted
 
