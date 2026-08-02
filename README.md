@@ -1,6 +1,6 @@
 # House Price Prediction — Linear Regression
 
-Predicting the house prices in King County using multiple linear regression model, built an end-to-end with a clean preprocessing → EDA → modeling → evaluation pipeline.
+An end-to-end multiple linear regression model that predicts house prices in King County, built with a clean preprocessing → EDA → modeling → evaluation pipeline.
 
 ---
 
@@ -18,7 +18,15 @@ This project trains a linear regression model to predict house sale prices from 
 | **RMSE**                         | **$170,900.96**      |
 | **Cross-Validated R² (5-fold)** | **0.8000 ± 0.0190** |
 
-The biggest accuracy gain came from **one-hot encoding `zipcode`** (treating location as categories rather than si,ple numbers), which lifted R² from 0.70 intially to 0.81.
+The biggest accuracy gain came from **one-hot encoding `zipcode`** (treating location as categories rather than simple numbers), which lifted R² from 0.70 intially to 0.81.
+
+### Actual vs Predicted
+
+![Actual vs Predicted](images/model_evaluation/actual_vs_predicted.png)
+
+### Residual Plot
+
+![Residual Plot](images/model_evaluation/residual_plot.png)
 
 ---
 
@@ -67,12 +75,16 @@ This cleans the data, runs the EDA, trains the model, evaluates it, saves the mo
 
 ## Workflow
 
-1. **Preprocessing** — drop all the identifiers, splits the `date`, engineers the `house_age` & `was_renovated`, and finally median-impute missing values.
+1. **Preprocessing** — drops identifiers, splits date into parts, engineers `house_age` and `was_renovated`, and median-imputes missing values.
 2. **EDA** — correlation heatmap helps to identify all the key price drivers (`sqft_living`, `grade`, `sqft_above`).
 3. **Encoding** — one-hot encode `zipcode` so that the location is treated as categories.
 4. **Modeling** — `LinearRegression` on an 80/20 split.
 5. **Evaluation** — MSE, RMSE, R², actual-vs-predicted and residual plots.
 6. **Validation** — 5-fold shuffled cross-validation to confirm the stability of the model.
+
+### Correlation Heatmap
+
+![Correlation Heatmap](images/feature_analysis/correlation_heatmap.png)
 
 ---
 
